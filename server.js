@@ -22,6 +22,8 @@ const { handleProfileGet } = require('./controllers/profile');
 const { handleImage } = require('./controllers/image');
 const { handleApiCall } = require('./controllers/api.js');
 
+app.get('./', (req, res) => { res.send('it is working!')})
+
 app.post('/signin', (req, res) => { handleSignin(req, res, db, bcrypt) })
 
 app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
