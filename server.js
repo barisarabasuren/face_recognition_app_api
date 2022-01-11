@@ -4,10 +4,11 @@ const bcrypt = require('bcrypt-nodejs')
 const db = require('knex')({
     client: 'pg',
     connection: {
-        host : '127.0.0.1',
-        user : 'barisarabasuren',
-        password : '',
-        database : 'face-recognition'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
+        // ssl: {
+        //     rejectUnauthorized: false
+        // }
     }
 });
 
